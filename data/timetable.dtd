@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    
+-->
+
+<!-- TODO define your own vocabulary/syntax. Example follows:  -->
+<!ELEMENT timetable (time, weekday,course, (activity|instructor|room))>
+<!ELEMENT time (#PCDATA)>
+
+<!ELEMENT weekday (#PCDATA)>
+<!ATTLIST weekday
+    type (Monday|Tuesday|Wednesday|Thursday|Friday) #REQUIRED>
+
+<!ELEMENT course (#PCDATA)>
+<!ELEMENT activity (#PCDATA)>
+<!ATTLIST weekday
+    type (lab|lecture) #REQUIRED>
+
+<!ELEMENT instructor (#PCDATA)>
+<!ELEMENT room (#PCDATA)>
