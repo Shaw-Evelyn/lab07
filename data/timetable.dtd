@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT timetable (time|course|weekday)*>
+
+<!--time perspective-->
+
+<!ELEMENT time (day*)>
+<!ATTLIST time slot (8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30|16:30|17:30) #REQUIRED
+> 
+<!ELEMENT day (coursename|type|instructor|room)*>
+<!ATTLIST day bookingday (Monday|Tuesday|Wednesday|Thursday|Friday) #REQUIRED
+>
+
+
+
+<!--course perspective-->
+
+<!ELEMENT course (coursetype*)>
+<!ATTLIST course title CDATA #REQUIRED>
+<!ELEMENT coursetype (timeslot|room|dayofweek|instructor)*>
+<!ATTLIST coursetype activity (Lab|Lecture|Tutorial) #REQUIRED
+>
+
+
+<!--weekday perspective-->
+<!ELEMENT weekday (booking*)>
+<!ATTLIST weekday bookingday
+	(Monday|Tuesday|Wednesday|Thursday|Friday) #REQUIRED
+>
+<!ELEMENT booking (coursename|room|type|instructor)*>
+<!ATTLIST booking slot (8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30|16:30|17:30) #REQUIRED
+>
+
+
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT coursename (#PCDATA)>
+<!ELEMENT instructor (#PCDATA)>
+<!ELEMENT room (#PCDATA)>
+<!ELEMENT timeslot (#PCDATA)>
+<!ELEMENT dayofweek (#PCDATA)>

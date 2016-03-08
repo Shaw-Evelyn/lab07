@@ -1,0 +1,27 @@
+
+  <weekday bookingday="Monday">
+    <booking slot="13:30">
+      <coursename>ACIT4770</coursename>
+      <room>SE12-306</room>
+      <type>Tutorial</type>
+      <instructor>Trevor Lord</instructor>
+    </booking>
+    <booking slot="14:30">
+      <coursename>ACIT4770</coursename>
+      <room>SE12-306</room>
+      <type>Tutorial</type>
+      <instructor>Trevor Lord</instructor>
+    </booking>
+    <booking slot="15:30">
+      <coursename>ACIT4910</coursename>
+      <room>SW1-2005</room>
+      <type>Lecture</type>
+      <instructor>Richard Chau</instructor>
+    </booking>
+    <booking slot="16:30">
+      <coursename>ACIT4650</coursename>
+      <room>SE6-205</room>
+      <type>Lecture</type>
+      <instructor>Medhat Elmasry</instructor>
+    </booking>
+  </weekday>

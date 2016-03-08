@@ -1,0 +1,21 @@
+
+  <course title="ACIT4910">
+    <coursetype activity="Lab">
+      <timeslot>13:30</timeslot>
+      <dayofweek>Thursday</dayofweek>
+      <room>SE12-306</room>
+      <instructor>Richard Chau</instructor>
+    </coursetype>
+    <coursetype activity="Lecture">
+      <timeslot>15:30</timeslot>
+      <dayofweek>Monday</dayofweek>
+      <room>SW1-2005</room>
+      <instructor>Richard Chau</instructor>
+    </coursetype>
+    <coursetype activity="Lecture">
+      <timeslot>9:30</timeslot>
+      <dayofweek>Thursday</dayofweek>
+      <room>SW1-1205</room>
+      <instructor>Richard Chau</instructor>
+    </coursetype>
+  </course>
