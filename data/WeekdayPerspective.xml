@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
-<schedule>
-  <weekday day="Mon">
-    <booking time="1:30">
-      <course>ACIT 4770</course>
-      <room>SE12 306</room>
+<timetable>
+  <weekday bookingday="Monday">
+    <booking slot="13:30">
+      <course>ACIT4770</course>
+      <room>SE12-306</room>
       <type>Tutorial</type>
       <instructor>Trevor Lord</instructor>
     </booking>
-    <booking time="2:30">
-      <course>ACIT 4770</course>
-      <room>SE12 306</room>
+    <booking slot="14:30">
+      <course>ACIT4770</course>
+      <room>SE12-306</room>
       <type>Tutorial</type>
       <instructor>Trevor Lord</instructor>
     </booking>
-    <booking time="3:30">
-      <course>ACIT 4910</course>
-      <room>SW9 206</room>
+    <booking slot="15:30">
+      <course>ACIT4910</course>
+      <room>SW1-2005</room>
       <type>Lecture</type>
       <instructor>Richard Chau</instructor>
     </booking>
-    <booking time="4:30">
-      <course>ACIT 4650</course>
-      <room>SE6 205</room>
+    <booking slot="16:30">
+      <course>ACIT4650</course>
+      <room>SE6-205</room>
       <type>Lecture</type>
       <instructor>Medhat Elmasry</instructor>
     </booking>
   </weekday>
-</schedule>
+</timetable>
