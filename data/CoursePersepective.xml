@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<timetable>
+
   <course title="ACIT4910">
     <coursetype activity="Lab">
       <timeslot>13:30</timeslot>
@@ -13,11 +12,10 @@
       <room>SW1-2005</room>
       <instructor>Richard Chau</instructor>
     </coursetype>
-    <coursetype activity="Lecutre">
+    <coursetype activity="Lecture">
       <timeslot>9:30</timeslot>
       <dayofweek>Thursday</dayofweek>
       <room>SW1-1205</room>
       <instructor>Richard Chau</instructor>
     </coursetype>
   </course>
-</timetable>
