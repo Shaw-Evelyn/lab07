@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timetable>
+  <time slot="10:30" >
+    <day bookingday="Tuesday">
+      <course>ACIT4620</course>
+      <type>Lab</type>
+      <instructor>Bethany Edmunds</instructor>
+      <room>SE12-306</room>
+    </day>
+
+    <day bookingday="Wednesday">
+      <course>ACIT4660</course>
+      <type>Lab</type>
+      <instructor>Steve Fabiszewski</instructor>
+      <room>SE12-306</room>
+    </day>
+
+    <day bookingday="Thursday">
+      <course>ACIT4850</course>
+      <type>Lab</type>
+      <instructor>James Parry</instructor>
+      <room>SE12-320</room>
+    </day>
+  </time>
+</timetable>
