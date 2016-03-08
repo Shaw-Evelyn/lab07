@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timetable>
+  <time slot="8:30" >
+    <day bookingday="Friday">
+      <course>ACIT4660</course>
+      <type>Lecture</type>
+      <instructor>Steve Fabiszewski</instructor>
+      <room>SW9-206</room>
+    </weekday>
+  </time>
+
+  <time slot="9:30" >
+    <day bookingday="Thursday">
+      <course>ACIT4910</course>
+      <type>Lecture</type>
+      <instructor>Richard Chau</instructor>
+      <room>SW5-1840</room>
+    </day>
+
+    <day bookingday="Friday">
+      <course>ACIT4660</course>
+      <type>Lecture</type>
+      <instructor>Steve Fabiszewski</instructor>
+      <room>SW9-206</room>
+    </day>
+  </time>
+
+  <time slot="10:30" >
+    <day bookingday="Tuesday">
+      <course>ACIT4620</course>
+      <type>Lab</type>
+      <instructor>Bethany Edmunds</instructor>
+      <room>SE12-306</room>
+    </day>
+
+    <day bookingday="Wednesday">
+      <course>ACIT4660</course>
+      <type>Lab</type>
+      <instructor>Steve Fabiszewski</instructor>
+      <room>SE12-306</room>
+    </day>
+
+    <day bookingday="Thursday">
+      <course>ACIT4850</course>
+      <type>Lab</type>
+      <instructor>James Parry</instructor>
+      <room>SE12-320</room>
+    </day>
+  </time>
+</timetable>
