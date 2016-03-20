@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE data SYSTEM "timetable.dtd" [
+<!DOCTYPE timetable SYSTEM "timetable.dtd" [
 <!ENTITY days SYSTEM "WeekdayPerspective.xml">
-<!ENTITY courses SYSTEM "CoursePerspective.xml">
-<!ENTITY times SYSTEM "TimePerspective.xml">
+<!ENTITY courses SYSTEM "CoursePersepective.xml">
+<!ENTITY times SYSTEM "TimePerspective.xml">]>
+
+<timetable>
+  &days;
+  &courses;
+  &times;
+</timetable>
