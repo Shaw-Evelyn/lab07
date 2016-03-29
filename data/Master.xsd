@@ -9,7 +9,7 @@ and open the template in the editor.
 <!-- Start with some data types that need validation -->
 
     <!-- Data Type for possible courses -->
-    <xs:simpleType name="Tcourse"/>
+    <xs:simpleType name="Tcourse">
       <xs:restriction base="xs:string">
         <xs:pattern value="[A][C][I][T]\d{4}"/>
       </xs:restriction>
@@ -53,7 +53,7 @@ and open the template in the editor.
     <!--Data Type for possible rooms -->
     <xs:simpleType name="Troom">
         <xs:restriction base="xs:string">
-            <xs:pattern value="\w{2}\d{1}[-]\d+"/>
+            <xs:pattern value="\w{2}\d{1,2}[-]\d+"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -70,11 +70,11 @@ and open the template in the editor.
     <!--This is for the root element, timetable which composes of 3 child elements -->
     <xs:element name="timetable" type="timetableType"/>
     <xs:complexType name="timetableType">
-        <xs:all>
-            <xs:element name="course" type="coursePerspectiveCourse"/> />
+        <xs:sequence>
+            <xs:element name="course" type="coursePerspectiveCourse"/> 
             <xs:element name="time" type="timePerspectiveTime"/>
-            <xs:element name="weekday" type="weedayPerspectiveWeekday"/>
-        </xs:all>
+            <xs:element name="weekday" type="weekdayPerspectiveWeekday"/>
+        </xs:sequence>
     </xs:complexType>
         
     <!-- Course Perspective structure -->
@@ -82,22 +82,21 @@ and open the template in the editor.
         <xs:element name="course" type="coursePerspectiveCourse"/>
         <xs:complexType name="coursePerspectiveCourse" mixed="true">
             <xs:sequence>
-                <xs:element name="coursetype" type="cousePerspectiveCoursetype"/>
-                <xs:any minxOccurs="1"/>
-                <xs:any maxOccurs="3"/>
+                <xs:element name="coursetype" type="coursePerspectiveCoursetype" maxOccurs="unbounded"/>
+
             </xs:sequence>
             <xs:attribute name="title" type="Tcourse"/>
         </xs:complexType>
     
         <!-- Complex Data Type for the coursetype element in the Course perspective -->
-        <xs:element name="coursetype" type="cousePerspectiveCoursetype"/>
-        <xs:complexType name="cousePerspectiveCoursetype" mixed="true">
+<!--        <xs:element name="coursetype" type="cousePerspectiveCoursetype"/>-->
+        <xs:complexType name="coursePerspectiveCoursetype" mixed="true">
             <xs:sequence>
                 <xs:element name="timeslot" type="Ttime"/>
                 <xs:element name="dayofweek" type="Tdays"/>
                 <xs:element name="room" type="Troom"/>
                 <xs:element name="instructor" type="Tinstructor"/>
-            </xs:sequence>
+            </xs:sequence>           
             <xs:attribute name="activity" type="Tactivity"/>
         </xs:complexType>
     
@@ -106,15 +105,15 @@ and open the template in the editor.
         <xs:element name="time" type="timePerspectiveTime"/>
         <xs:complexType name="timePerspectiveTime" mixed="true">
             <xs:sequence>
-                <xs:element name="day" type="xs:timePerspectiveDay"/>
-                <xs:any minOccurs="1"/>
-                <xs:any maxOccurs="5"/>
+                <xs:element name="day" type="timePerspectiveDay" maxOccurs="unbounded"/>
+<!--                <xs:any minOccurs="1"/>
+                <xs:any maxOccurs="5"/>-->
             </xs:sequence>
             <xs:attribute name="slot" type="Ttime"/>
         </xs:complexType>   
         
         <!-- Complex Data Type for day element in the Time perspective -->
-        <xs:element name="day" type="timePerspectiveDay"/>
+        <!--<xs:element name="day" type="timePerspectiveDay"/> -->
         <xs:complexType name="timePerspectiveDay" mixed="true">
             <xs:sequence>
                 <xs:element name="coursename" type="Tcourse"/>
@@ -131,15 +130,15 @@ and open the template in the editor.
         <xs:element name="weekday" type="weekdayPerspectiveWeekday"/>
         <xs:complexType name="weekdayPerspectiveWeekday" mixed="true">
             <xs:sequence>
-                <xs:element name="booking" type="weekdayPerspectiveBooking"/>
-                <xs:any minOccurs="0"/>
-                <xs:any maxOccurs="9"/>
+                <xs:element name="booking" type="weekdayPerspectiveBooking" maxOccurs="unbounded"/>
+<!--               
+                <xs:any minOccurs="0" maxOccurs="9"/>-->
             </xs:sequence>
-            <xs:attribute name="bookingday" type="Tday"/>
+            <xs:attribute name="bookingday" type="Tdays"/>
         </xs:complexType>   
         
         <!-- Complex Data Type for booking element in the Weekday perspective -->
-        <xs:element name="booking" type="weekdayPerspectiveBooking"/>
+       <!-- <xs:element name="booking" type="weekdayPerspectiveBooking"/>-->
         <xs:complexType name="weekdayPerspectiveBooking" mixed="true">
             <xs:sequence>
                 <xs:element name="coursename" type="Tcourse"/>
