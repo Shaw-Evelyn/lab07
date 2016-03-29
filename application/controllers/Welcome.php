@@ -27,7 +27,7 @@ class Welcome extends MY_Controller {
     }
 
     function index() {
-        //homepage validation
+        
         $this->load->helper('directory');
         $this->data['pagebody'] = 'homepage';
        
@@ -48,7 +48,7 @@ class Welcome extends MY_Controller {
         // Present the list to choose from
 
         
-        
+        //homepage validation
         $doc = new DOMDocument();
         $doc->load('./data/Timetable.xml');
         //$doc->schemaValidate('./data/Master.xsd');
@@ -66,7 +66,7 @@ class Welcome extends MY_Controller {
                 $result .= $error->message . '<br/>';
             }
         }
-        
+        //Show the result
         $this->data['message'] = $result;
         libxml_clear_errors();
         $this->render();
@@ -76,8 +76,6 @@ class Welcome extends MY_Controller {
     //-------------------------------------------------------------
     //  Show the "receipt" for a specific order
     //-------------------------------------------------------------
-
-
     
 
     function order($filename) {
