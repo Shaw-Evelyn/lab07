@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Start with some data types that need validation -->
+
+    <!-- Data Type for possible courses -->
+    <xs:simpleType name="Tcourse">
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[A][C][I][T]\d{4}"/>
+      </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Data Type for possible times -->
+    <xs:simpleType name="Ttime">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="8:30"/>
+            <xs:enumeration value="9:30"/>
+            <xs:enumeration value="10:30"/>
+            <xs:enumeration value="11:30"/>
+            <xs:enumeration value="12:30"/>
+            <xs:enumeration value="13:30"/>
+            <xs:enumeration value="14:30"/>
+            <xs:enumeration value="15:30"/>
+            <xs:enumeration value="16:30"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Data Type for possible activities -->
+    <xs:simpleType name="Tactivity">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Lab"/>
+            <xs:enumeration value="Lecture"/>
+            <xs:enumeration value="Tutorial"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Data Type for possible days of the week -->
+    <xs:simpleType name="Tdays">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Monday"/>
+            <xs:enumeration value="Tuesday"/>
+            <xs:enumeration value="Wednesday"/>
+            <xs:enumeration value="Thursday"/>
+            <xs:enumeration value="Friday"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Data Type for possible rooms -->
+    <xs:simpleType name="Troom">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\w{2}\d{1,2}[-]\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Data Type for possible Instructor Names (a first name and a last name)-->
+    <xs:simpleType name="Tinstructor">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\w+\s\w+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+ 
+    
+<!-- Now we are going to deal the with structure -->
+    <!--This is for the root element, timetable which composes of 3 child elements -->
+    <xs:element name="timetable" type="timetableType"/>
+    <xs:complexType name="timetableType">
+        <xs:sequence>
+            <xs:element name="course" type="coursePerspectiveCourse"/> 
+            <xs:element name="time" type="timePerspectiveTime"/>
+            <xs:element name="weekday" type="weekdayPerspectiveWeekday"/>
+        </xs:sequence>
+    </xs:complexType>
+        
+    <!-- Course Perspective structure -->
+        <!-- Complex Data Type for the course element in the Course perspective -->
+        <xs:element name="course" type="coursePerspectiveCourse"/>
+        <xs:complexType name="coursePerspectiveCourse" mixed="true">
+            <xs:sequence>
+                <xs:element name="coursetype" type="coursePerspectiveCoursetype" maxOccurs="unbounded"/>
+
+            </xs:sequence>
+            <xs:attribute name="title" type="Tcourse"/>
+        </xs:complexType>
+    
+        <!-- Complex Data Type for the coursetype element in the Course perspective -->
+<!--        <xs:element name="coursetype" type="cousePerspectiveCoursetype"/>-->
+        <xs:complexType name="coursePerspectiveCoursetype" mixed="true">
+            <xs:sequence>
+                <xs:element name="timeslot" type="Ttime"/>
+                <xs:element name="dayofweek" type="Tdays"/>
+                <xs:element name="room" type="Troom"/>
+                <xs:element name="instructor" type="Tinstructor"/>
+            </xs:sequence>           
+            <xs:attribute name="activity" type="Tactivity"/>
+        </xs:complexType>
+    
+    <!-- Time Perspective structure -->
+        <!-- Complex Data Type for the time element in the Time perspective -->
+        <xs:element name="time" type="timePerspectiveTime"/>
+        <xs:complexType name="timePerspectiveTime" mixed="true">
+            <xs:sequence>
+                <xs:element name="day" type="timePerspectiveDay" maxOccurs="unbounded"/>
+<!--                <xs:any minOccurs="1"/>
+                <xs:any maxOccurs="5"/>-->
+            </xs:sequence>
+            <xs:attribute name="slot" type="Ttime"/>
+        </xs:complexType>   
+        
+        <!-- Complex Data Type for day element in the Time perspective -->
+        <!--<xs:element name="day" type="timePerspectiveDay"/> -->
+        <xs:complexType name="timePerspectiveDay" mixed="true">
+            <xs:sequence>
+                <xs:element name="coursename" type="Tcourse"/>
+                <xs:element name="type" type="Tactivity"/>
+                <xs:element name="instructor" type="Tinstructor"/>
+                <xs:element name="room" type="Troom"/>
+            </xs:sequence>
+            <xs:attribute name="bookingday" type="Tdays"/>
+        </xs:complexType>
+
+    
+    <!-- Weekday Perspective structure -->
+    <!-- Complex Data Type for the weekday element in the Weekday perspective -->
+        <xs:element name="weekday" type="weekdayPerspectiveWeekday"/>
+        <xs:complexType name="weekdayPerspectiveWeekday" mixed="true">
+            <xs:sequence>
+                <xs:element name="booking" type="weekdayPerspectiveBooking" maxOccurs="unbounded"/>
+<!--               
+                <xs:any minOccurs="0" maxOccurs="9"/>-->
+            </xs:sequence>
+            <xs:attribute name="bookingday" type="Tdays"/>
+        </xs:complexType>   
+        
+        <!-- Complex Data Type for booking element in the Weekday perspective -->
+       <!-- <xs:element name="booking" type="weekdayPerspectiveBooking"/>-->
+        <xs:complexType name="weekdayPerspectiveBooking" mixed="true">
+            <xs:sequence>
+                <xs:element name="coursename" type="Tcourse"/>
+                <xs:element name="room" type="Troom"/>
+                <xs:element name="type" type="Tactivity"/>
+                <xs:element name="instructor" type="Tinstructor"/>
+            </xs:sequence>
+            <xs:attribute name="slot" type="Ttime"/>
+        </xs:complexType>
+    
+</xs:schema>
