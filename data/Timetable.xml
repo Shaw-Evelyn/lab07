@@ -1,77 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type='text/xsl' href='Report1.xsl'?>
 <timetable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="Master.xsd">
-  <course title="ACIT4910">
-    <coursetype activity="Lab">
-      <timeslot>13:30</timeslot>
-      <dayofweek>Thursday</dayofweek>
-      <room>SE12-306</room>
-      <instructor>Richard Chau</instructor>
-    </coursetype>
-    <coursetype activity="Lecture">
-      <timeslot>15:30</timeslot>
-      <dayofweek>Monday</dayofweek>
-      <room>SW1-2005</room>
-      <instructor>Richard Chau</instructor>
-    </coursetype>
-    <coursetype activity="Lecture">
-      <timeslot>9:30</timeslot>
-      <dayofweek>Thursday</dayofweek>
-      <room>SW1-1205</room>
-      <instructor>Richard Chau</instructor>
-    </coursetype>
-  </course>
+           xsi:noNamespaceSchemaLocation="Master.xsd">
+    <course title="ACIT4910">
+        <coursetype activity="Lab">
+            <timeslot>13:30</timeslot>
+            <dayofweek>Thursday</dayofweek>
+            <room>SE12-306</room>
+            <instructor>Richard Chau</instructor>
+        </coursetype>
+        <coursetype activity="Lecture">
+            <timeslot>15:30</timeslot>
+            <dayofweek>Monday</dayofweek>
+            <room>SW1-2005</room>
+            <instructor>Richard Chau</instructor>
+        </coursetype>
+        <coursetype activity="Lecture">
+            <timeslot>9:30</timeslot>
+            <dayofweek>Thursday</dayofweek>
+            <room>SW1-1205</room>
+            <instructor>Richard Chau</instructor>
+        </coursetype>
+    </course>
   
-   <time slot="10:30" >
-    <day bookingday="Tuesday">
-      <coursename>ACIT4620</coursename>
-      <type>Lab</type>
-      <instructor>Bethany Edmunds</instructor>
-      <room>SE12-306</room>
-    </day>
+    <time slot="10:30" >
+        <day bookingday="Tuesday">
+            <coursename>ACIT4620</coursename>
+            <type>Lab</type>
+            <instructor>Bethany Edmunds</instructor>
+            <room>SE12-306</room>
+        </day>
 
-    <day bookingday="Wednesday">
-      <coursename>ACIT4660</coursename>
-      <type>Lab</type>
-      <instructor>Steve Fabiszewski</instructor>
-      <room>SE12-306</room>
-    </day>
+        <day bookingday="Wednesday">
+            <coursename>ACIT4660</coursename>
+            <type>Lab</type>
+            <instructor>Steve Fabiszewski</instructor>
+            <room>SE12-306</room>
+        </day>
 
-    <day bookingday="Thursday">
-      <coursename>ACIT4850</coursename>
-      <type>Lab</type>
-      <instructor>James Parry</instructor>
-      <room>SE12-320</room>
-    </day>
-  </time>
+        <day bookingday="Thursday">
+            <coursename>ACIT4850</coursename>
+            <type>Lab</type>
+            <instructor>James Parry</instructor>
+            <room>SE12-320</room>
+        </day>
+    </time>
+    
+
+    
   
-  <weekday bookingday="Monday">
-    <booking slot="13:30">
-      <coursename>ACIT4770</coursename>
-      <room>SE12-306</room>
-      <type>Tutorial</type>
-      <instructor>Trevor Lord</instructor>
-    </booking>
-    <booking slot="14:30">
-      <coursename>ACIT4770</coursename>
-      <room>SE12-306</room>
-      <type>Tutorial</type>
-      <instructor>Trevor Lord</instructor>
-    </booking>
-    <booking slot="15:30">
-      <coursename>ACIT4910</coursename>
-      <room>SW1-2005</room>
-      <type>Lecture</type>
-      <instructor>Richard Chau</instructor>
-    </booking>
-    <booking slot="16:30">
-      <coursename>ACIT4650</coursename>
-      <room>SE6-205</room>
-      <type>Lecture</type>
-      <instructor>Medhat Elmasry</instructor>
-    </booking>
-  </weekday>
+    <weekday bookingday="Monday">
+        <booking slot="13:30">
+            <coursename>ACIT4770</coursename>
+            <room>SE12-306</room>
+            <type>Tutorial</type>
+            <instructor>Trevor Lord</instructor>
+        </booking>
+        <booking slot="14:30">
+            <coursename>ACIT4770</coursename>
+            <room>SE12-306</room>
+            <type>Tutorial</type>
+            <instructor>Trevor Lord</instructor>
+        </booking>
+        <booking slot="15:30">
+            <coursename>ACIT4910</coursename>
+            <room>SW1-2005</room>
+            <type>Lecture</type>
+            <instructor>Richard Chau</instructor>
+        </booking>
+        <booking slot="16:30">
+            <coursename>ACIT4650</coursename>
+            <room>SE6-205</room>
+            <type>Lecture</type>
+            <instructor>Medhat Elmasry</instructor>
+        </booking>
+    </weekday>
+
   
   
  
