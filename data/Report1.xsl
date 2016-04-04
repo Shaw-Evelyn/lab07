@@ -35,8 +35,8 @@
                 </xsl:for-each>
                 <th>
                     <xsl:for-each select="/timetable/course/coursetype/dayofweek/value">
+                    </xsl:for-each>
                 </th>
-            </xsl:for-each>
                
             </tr>
         </thead>
@@ -44,15 +44,95 @@
     </xsl:template>
     
     <xsl:template name="RowHeading">
-
-            <tr>
-                <td>
-                    <xsl:for-each select="/timetable/weekday/booking">
-                    <xsl:value-of select="./@slot"/>
-                    </xsl:for-each>
-                </td>   
-            </tr>
         
+        <xsl:for-each select="/timetable/weekday/booking">
+            <xsl:choose>
+                <xsl:when test="@slot='15:30'" >
+                    <tr>
+                        <td>
+                    
+                            <xsl:value-of select="./@slot"/>
+                   
+                        </td>  
+                        <td>
+                            <xsl:value-of select="coursename"/>
+                            <br/>
+                            <xsl:value-of select="room"/>
+                            <br/>
+                            <xsl:value-of select="type"/>
+                            <br/>
+                            <xsl:value-of select="instructor"/>
+                        </td>
+                    </tr>
+
+
+                </xsl:when>
+                <xsl:when test="@slot='13:30'" >
+                    <tr>
+                        <td>
+                    
+                            <xsl:value-of select="./@slot"/>
+                   
+                        </td>  
+                        <td>
+                            <xsl:value-of select="coursename"/>
+                            <br/>
+                            <xsl:value-of select="room"/>
+                            <br/>
+                            <xsl:value-of select="type"/>
+                            <br/>
+                            <xsl:value-of select="instructor"/>
+                        </td>
+                    </tr>
+
+
+                </xsl:when>
+                <xsl:when test="@slot='14:30'" >
+                    <tr>
+                        <td>
+                    
+                            <xsl:value-of select="./@slot"/>
+                   
+                        </td>  
+                        <td>
+                            <xsl:value-of select="coursename"/>
+                            <br/>
+                            <xsl:value-of select="room"/>
+                            <br/>
+                            <xsl:value-of select="type"/>
+                            <br/>
+                            <xsl:value-of select="instructor"/>
+                        </td>
+                    </tr>
+
+
+                </xsl:when>
+                <xsl:when test="@slot='16:30'" >
+                    <tr>
+                        <td>
+                    
+                            <xsl:value-of select="./@slot"/>
+                   
+                        </td>  
+                        <td>
+                            <xsl:value-of select="coursename"/>
+                            <br/>
+                            <xsl:value-of select="room"/>
+                            <br/>
+                            <xsl:value-of select="type"/>
+                            <br/>
+                            <xsl:value-of select="instructor"/>
+                        </td>
+                    </tr>
+
+
+                </xsl:when>
+                <otherwise>
+                    <td></td>
+                </otherwise>
+            </xsl:choose>
+
+        </xsl:for-each>       
     </xsl:template>
     
     
